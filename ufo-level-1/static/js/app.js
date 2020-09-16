@@ -16,6 +16,7 @@ function display(displayData) {
             var cell = row.append("td");
             cell.text(value);
         });
+        console.log(tbody)
     });
 }
 
@@ -31,12 +32,9 @@ d3.select("#filter-btn")
         var datevalue = dateinput.property("value");
 
         console.log(datevalue);
+        console.log(data);
 
-        var tableData = data;
-        var filteredData = tableData.filter((sighting) => {
-            console.log(sighting.date);            
-            return sighting.date == datevalue;
-        });
+        var filteredData = data.filter(sighting => sighting.datetime === datevalue);
 
         display(filteredData);
     });
