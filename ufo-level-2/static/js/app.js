@@ -25,6 +25,10 @@ function display(displayData) {
     });
 }
 
+function unique(array) {
+    return array.filter((item, i, ar) => ar.indexOf(item) === i);
+}
+
 // Add a procedure to execute on the filter button's
 // click event: grab the input date from the filter form
 // and filter the data for only matching datetimes.
@@ -58,4 +62,6 @@ d3.select("#filter-btn")
 
 // Initial display: all data
 display(tableData);
+
+console.log(unique(tableData.map(d => d.shape)));
 
