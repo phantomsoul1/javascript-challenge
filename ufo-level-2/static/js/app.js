@@ -25,6 +25,8 @@ function display(displayData) {
     });
 }
 
+// produces an array containing unique elements within a provided
+// array. This is used to create the selection content for filtering
 function unique(array) {
     return array.filter((item, i, ar) => ar.indexOf(item) === i);
 }
